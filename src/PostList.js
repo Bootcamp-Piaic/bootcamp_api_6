@@ -1,9 +1,13 @@
 import React from 'react'
 
-export const PostList = () => {
+export default function PostList  ({resource}) {
+    const posts=resource.read()
     return (
-        <div>
-            
-        </div>
+        <ul>
+           {posts.map((post,i)=>(
+               <li key={i}>{post.title}</li>
+           ))} 
+        </ul>
     )
 }
+
